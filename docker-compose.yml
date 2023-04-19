@@ -4,14 +4,16 @@ services:
   api:
     build:
       context: .
+      args:
+        - NODE_ENV=development
     restart: unless-stopped
-    command: npm run start:dev
+    command:  npm run start:dev
     environment:
       NODE_ENV: development
       TRUCK_API_URI: "https://data.sfgov.org/resource/rqzj-sfat.json"
       APP_PORT: 3001
-
     ports:
       - '3001:3001'
     volumes:
       - ./:/usr/src/app
+      - /usr/src/app/node_modules

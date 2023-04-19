@@ -12,7 +12,7 @@
 * Note: All routes within this app are prefixed with `api'
 
 ### Local Environment Setup
-
+[Project Github repo](https://github.com/Shelbyb/food-truck-api)
 URL: http://localhost:3001/api
 
 ```bash

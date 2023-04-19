@@ -19,12 +19,14 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node --from=dev /usr/src/app/package*.json ./
 
-COPY --chown=node:node --from=dev /usr/src/app/dist ./dist
+RUN npm ci --omit=dev
 
-RUN npm install --production
+COPY --chown=node:node --from=dev /usr/src/app/dist ./dist
 
 EXPOSE 3001
 
 USER node
 
 CMD ["node", "dist/main"]
+
+
